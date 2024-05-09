@@ -1,0 +1,29 @@
+#navbar-part{
+    width: 100%;
+    background-color: coral;
+   
+}
+
+#navbar-part .menu li{
+    font-family: "Poppins", sans-serif;
+    font-weight: bold;
+}
+
+#navbar-part .menu li a:hover{
+    background-color: transparent;
+}
+
+#navbar-part .menu li a:focus{
+    background-color: transparent;
+}
+
+#navbar-part .menu li a:active{
+    background-color: transparent;
+    color: transparent;
+}
+
+
+
+#navbar-part .menu li a:focus-visible{
+    border: 0;
+}

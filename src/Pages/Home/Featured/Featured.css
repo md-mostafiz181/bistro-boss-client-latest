@@ -1,0 +1,17 @@
+#featured-part{
+    width: 100%;
+    padding: 350px 0;
+    background-image: url(../../../assets/home/featured.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+#featured-part .overlay{
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.614);
+    top: 0;
+    left: 0;
+    position: absolute;
+}

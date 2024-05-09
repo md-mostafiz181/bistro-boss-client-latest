@@ -31,7 +31,7 @@ const Chef = () => {
       </div>
 
       {chef.length > 6 ? (
-        <div className="flex justify-center items-center h-full mt-3">
+        <div className="flex justify-center items-center h-full mt-3 mb-4">
             <button className="cart-btn-view fontPrimary font-bold  uppercase text-orange-400" onClick={() => setShowAll(!showAll)}>
           {showAll ? "View Less Chefs" : "View Full Chefs"}
         </button>

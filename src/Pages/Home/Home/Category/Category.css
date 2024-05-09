@@ -1,0 +1,10 @@
+#category-part{
+    padding: 60px 5px;
+}
+
+
+#category-part .image img{
+    width: 100%;
+    height: 100%;
+}
+

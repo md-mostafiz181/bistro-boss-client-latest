@@ -1,4 +1,6 @@
+import Container from "../../../components/Container/Container";
 import Banner from "../Banner/Banner";
+import Category from "./Category/Category";
 
 
 const Home = () => {
@@ -6,6 +8,9 @@ const Home = () => {
         
         <div>
             <Banner></Banner>
+            <Container>
+              <Category></Category>
+            </Container>
 
         </div>
     );

@@ -1,17 +1,14 @@
-.cart-btn-view{
+.cart-btn{
     display: inline-block;
     padding: 10px 20px;
     background-color: #E8E8E8;
     border-radius: 10px;
     border-bottom: 5px solid #BB8506;
     transition: .4s;
-    margin: 0 auto;
-    
-    
     
 }
 
-.cart-btn-view:hover{
+.cart-btn:hover{
     background-color: #1F2937;
     
 }

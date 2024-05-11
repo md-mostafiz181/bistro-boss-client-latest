@@ -5,6 +5,7 @@ import Chef from "../Chef/Chef";
 import Contact from "../Contact/Contact";
 import Featured from "../Featured/Featured";
 import PopularMenu from "../PopularMenu/PopularMenu";
+import Testimonial from "../Testimonial/Testimonial";
 import Category from "./Category/Category";
 
 
@@ -22,6 +23,9 @@ const Home = () => {
               
             </Container>
             <Featured></Featured>
+           <Container>
+           <Testimonial></Testimonial>
+           </Container>
 
            
 

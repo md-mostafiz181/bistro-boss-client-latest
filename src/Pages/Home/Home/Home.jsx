@@ -1,3 +1,4 @@
+import { Helmet } from "react-helmet-async";
 import Container from "../../../components/Container/Container";
 import About from "../About/About";
 import Banner from "../Banner/Banner";
@@ -13,6 +14,11 @@ const Home = () => {
     return (
         
         <div>
+
+      <Helmet>
+        <title>Bistro || Home</title>
+       
+      </Helmet>
             <Banner></Banner>
             <Container>
               <Category></Category>

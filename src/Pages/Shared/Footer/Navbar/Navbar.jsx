@@ -1,14 +1,15 @@
+import { Link } from "react-router-dom";
 import Container from "../../../../components/Container/Container";
 import "./Navbar.css";
 
 const Navbar = () => {
   const navOptions = (
     <>
-      <li>
-        <a>Home</a>
+      <li className="uppercase text-1xl">
+       <Link to="/">Home</Link>
       </li>
-      <li>
-        <a>About</a>
+      <li className="uppercase text-1xl">
+        <Link to="/menu">Menu</Link>
       </li>
       <li>
         <a>Shop</a>

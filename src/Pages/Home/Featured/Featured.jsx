@@ -6,7 +6,7 @@ import "./Featured.css"
 const Featured = () => {
     return (
         
-        <section id="featured-part" >
+        <section id="featured-part" className="bg-fixed" >
 
             <section className="overlay pt-10">
             <section className="mt-5 text-white">

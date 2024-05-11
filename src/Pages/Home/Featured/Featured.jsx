@@ -24,11 +24,11 @@ const Featured = () => {
                         <img src={featuredImg} alt="" />
 
                     </div>
-                    <div className="right w-full md:w-1/2  bg-green-500">
-                        <h1>March 20, 2023</h1>
-                        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio repellat, aperiam a autem vel dolor voluptas perferendis neque totam natus deserunt cum aspernatur quos nulla fuga, nihil corporis dolores quo similique provident sequi. Hic dolorem reprehenderit tenetur officia provident est, accusamus sunt doloribus, laboriosam quas earum.</p>
+                    <div className="right w-full md:w-1/2  px-5 py-10">
+                        <h1 className="lg:text-2xl md:text-2xl sm:text-1xl fontPrimary text-white mb-3">March 20, 2023</h1>
+                        <p className="lg:text-1xl sm:text-xl md:text-xl fontPrimary font-bold text-white mb-3">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Odio repellat, aperiam a autem vel dolor voluptas perferendis neque totam natus deserunt cum aspernatur quos nulla fuga, nihil corporis dolores quo similique provident sequi. Hic dolorem reprehenderit tenetur officia provident est, accusamus sunt doloribus, laboriosam quas earum.</p>
 
-                        <button>Read More</button>
+                        <button className="btn-read">Read More</button>
                     </div>
                 </div>
                </Container>

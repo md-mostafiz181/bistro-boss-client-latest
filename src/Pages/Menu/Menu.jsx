@@ -5,11 +5,13 @@ import dessertImg from "../../assets/menu/dessert-bg.jpeg"
 import saladImg from "../../assets/menu/salad-bg.jpg"
 import pizzaImg from "../../assets/menu/pizza-bg.jpg"
 import soupImg from "../../assets/menu/soup-bg.jpg"
+import drinkImg from "../../assets/menu/drinks.jpg"
 import Container from "../../components/Container/Container";
 import SectionTitle from "../../components/SectionTitle/SectionTitle";
 import useMenu from "../../hooks/useMenu";
 import MenuCategory from "./MenuCategory/MenuCategory";
 import  "./Menu.css"
+// import { Link } from "react-router-dom";
 
 const Menu = () => {
     const [menu]=useMenu();
@@ -18,15 +20,13 @@ const Menu = () => {
     const salad=menu.filter(item=>item.category === "salad")
     const pizza=menu.filter(item=>item.category === "pizza")
     const soup=menu.filter(item=>item.category === "soup")
+    const drinks=menu.filter(item=>item.category === "drinks")
   return (
     <div >
       <Helmet>
         <title>Bistro || Menu</title>
       </Helmet>
-      <Cover
-      img={menuImg}
-      title="Our Menu"
-      ></Cover>
+      <Cover img={menuImg} title="Our Menu" text="Would you like to our dish?" ></Cover>
      <Container >
             <section className="py-5">
                 <SectionTitle
@@ -35,63 +35,16 @@ const Menu = () => {
                 ></SectionTitle>
         
             </section>
-
-            <MenuCategory
-            items={offered}
-            >
-           </MenuCategory>
-
-
-
-     </Container>
-
-     <Cover img={dessertImg} title="Dessert"></Cover>
-     <Container>
-     <MenuCategory
-            items={dessert}
-     ></MenuCategory>
-     <div className="flex justify-center items-center">
-      <button className="cart-btn uppercase fontPrimary text-center">Order your favorite food</button>
-     </div>
-
-     </Container>
-
-     <Cover img={saladImg} title="Salad"></Cover>
-     <Container>
-        <MenuCategory
-            items={salad}
-        ></MenuCategory>
-
-    <div className="flex justify-center items-center">
-      <button className="cart-btn uppercase fontPrimary text-center">Order your favorite food</button>
-     </div>
-
-     </Container>
-
-     <Cover img={pizzaImg} title="pizza"></Cover>
-     <Container>
-        <MenuCategory
-            items={pizza}
-        ></MenuCategory>
-
-<div className="flex justify-center items-center">
-      <button className="cart-btn uppercase fontPrimary text-center">Order your favorite food</button>
-     </div>
-
-     </Container>
-
-     <Cover img={soupImg} title="soup"></Cover>
-     <Container>
-        <MenuCategory
-            items={soup}
-        ></MenuCategory>
-
-<div className="flex justify-center items-center">
-      <button className="cart-btn uppercase fontPrimary text-center">Order your favorite food</button>
-     </div>
-
-     </Container>
+            <MenuCategory items={offered}></MenuCategory>
+        </Container>
+        <MenuCategory items={dessert} title={"dessert"} img={dessertImg}></MenuCategory>
+        <MenuCategory items={salad} title={"salad"} img={saladImg}></MenuCategory>
+        <MenuCategory  items={pizza} title={"pizza"} img={pizzaImg}></MenuCategory>
+        <MenuCategory  items={soup} title={"soup"} img={soupImg}></MenuCategory>
+        <MenuCategory items={drinks} title={"drinks"} img={drinkImg}></MenuCategory>
     </div>
+
+
   );
 };
 

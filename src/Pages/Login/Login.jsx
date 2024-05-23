@@ -4,13 +4,17 @@ import loginImg from "../../assets/others/authentication2.png"
 import { Helmet } from "react-helmet-async";
 
 import { loadCaptchaEnginge, LoadCanvasTemplate,validateCaptcha } from 'react-simple-captcha'
-import { useEffect, useRef, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import Swal from 'sweetalert2'
+import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 const Login = () => {
     const [disabled,setDisabled]=useState(true)
     const captchaRef=useRef()
+
+    const {signIn}=useContext(AuthContext)
 
     useEffect(()=>{
         loadCaptchaEnginge(6); 
@@ -23,6 +27,11 @@ const Login = () => {
         const password=form.password.value;
         console.log(email,password)
         // form.reset()
+        signIn(email,password)
+        .then(result =>{
+            const user =result.user;
+            console.log(user)
+        })
 
     }
 
@@ -67,7 +76,7 @@ const Login = () => {
     </div>
 
     
-    <div className="card w-full md:w-1/2 shrink-0  max-w-sm shadow-2xl bg-base-100">
+    <div className="card w-full md:w-1/2 shrink-0 py-2  max-w-sm shadow-2xl bg-base-100">
 
         <h1 className="text-5xl font-bold text-center py-3" >Login</h1>
        
@@ -98,6 +107,9 @@ const Login = () => {
         <button onClick={handleValidateCaptcha} className="btn btn-outline ">Validation</button>
         <input disabled={disabled}  className="btn bg-[#D1A054] fontPrimary uppercase text-white" type="submit" value="Login" />
       </form>
+
+      <Link to="/signup">
+      <h1 className="fontPrimary text-[#D1A054] text-center">New here? Create a new account</h1></Link>
     </div>
   </div>
 </div>

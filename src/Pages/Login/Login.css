@@ -1,0 +1,8 @@
+#login-part{
+    background: url(../../assets//others/authentication.png);
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding: 200px 5px;
+
+    width: 100%;
+}

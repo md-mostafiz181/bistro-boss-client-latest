@@ -5,6 +5,7 @@ import "./signUp.css";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
+import { Link } from "react-router-dom";
 
 
 
@@ -112,6 +113,8 @@ const SignUp = () => {
                     value="Sign Up"
                   />
                 </div>
+
+                <p className="primaryFont text-yellow-500">Already have an account? Please <Link to="/login">Login</Link> </p>
               </form>
             </div>
           </div>

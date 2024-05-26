@@ -13,7 +13,7 @@ import SectionTitle from "../../../../components/SectionTitle/SectionTitle";
 const Category = () => {
   return (
     <>
-      <section>
+      <section >
 
         <SectionTitle
         subHeading={"From 11 a.m to 10 p.m"}
@@ -28,7 +28,7 @@ const Category = () => {
             clickable: true,
           }}
           modules={[Pagination]}
-          className="mySwiper"
+          className="mySwiper "
           id="category-part"
           breakpoints={{
             1024: {

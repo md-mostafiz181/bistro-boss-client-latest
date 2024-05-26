@@ -1,28 +1,61 @@
 import { Link } from "react-router-dom";
 import Container from "../../../../components/Container/Container";
 import "./Navbar.css";
+import { useContext } from "react";
+import { AuthContext } from "../../../../providers/AuthProvider";
 
 const Navbar = () => {
+  const { user, logOut } = useContext(AuthContext);
+
+  const handleLogOut = () => {
+    logOut()
+      .then(() => {})
+      .then((error) => {
+        console.log(error);
+      });
+  };
   const navOptions = (
     <>
       <li className="uppercase text-1xl">
-       <Link to="/">Home</Link>
+        <Link to="/">Home</Link>
       </li>
       <li className="uppercase text-1xl">
         <Link to="/menu">Menu</Link>
       </li>
       <li>
-       <Link className="uppercase text-1xl" to="order/salad">Order Shop</Link>
+        <Link className="uppercase text-1xl" to="order/salad">
+          Order Shop
+        </Link>
       </li>
       <li>
-       <Link className="uppercase text-1xl" to="login">Login</Link>
+        <Link className="uppercase text-1xl" to="secret">
+          Secret
+        </Link>
       </li>
+
+      <div >
+        {user ? (
+          <>
+            <button onClick={handleLogOut} className="btn uppercase text-1xl">
+              LogOut
+            </button>
+          </>
+        ) : (
+          <>
+            <li>
+              <Link className="btn uppercase text-1xl hover:text-white" to="login">
+                Login
+              </Link>
+            </li>
+          </>
+        )}
+      </div>
     </>
   );
   return (
     <div id="navbar-part">
       <Container>
-        <div className="navbar ">
+        <div className="navbar z-10">
           <div className="navbar-start">
             <div className="dropdown">
               <div

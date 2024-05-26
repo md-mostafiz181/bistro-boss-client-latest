@@ -106,6 +106,7 @@ const Login = () => {
 
         <button onClick={handleValidateCaptcha} className="btn btn-outline ">Validation</button>
         <input disabled={disabled}  className="btn bg-[#D1A054] fontPrimary uppercase text-white" type="submit" value="Login" />
+
       </form>
 
       <Link to="/signup">

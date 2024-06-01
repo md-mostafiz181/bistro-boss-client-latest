@@ -3,6 +3,7 @@ import Container from "../../../../components/Container/Container";
 import "./Navbar.css";
 import { useContext } from "react";
 import { AuthContext } from "../../../../providers/AuthProvider";
+import { FaShoppingCart } from "react-icons/fa";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
@@ -33,9 +34,26 @@ const Navbar = () => {
         </Link>
       </li>
 
+      <li>
+        <Link>
+        <button className="btn">
+          <FaShoppingCart></FaShoppingCart>
+          <div className="badge badge-secondary">+0</div>
+        </button>
+        </Link>
+      </li>
+
       <div >
         {user ? (
           <>
+
+            {/* <div className="avatar">
+              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                <img src={photourl} />
+              </div>
+            </div> */}
+            {/* <span>{user ?. displayName}</span> */}
+
             <button onClick={handleLogOut} className="btn uppercase text-1xl">
               LogOut
             </button>

@@ -5,7 +5,7 @@ import "./signUp.css";
 import { useForm } from "react-hook-form";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 
 
@@ -16,10 +16,12 @@ const SignUp = () => {
     register,
     handleSubmit,
     formState: { errors },
-    // reset,
+    reset,
   } = useForm();
 
-  const {createUser}=useContext(AuthContext)
+  const navigate =useNavigate()
+
+  const {createUser,updateUserProfile}=useContext(AuthContext)
 
 
   const onSubmit = (data) => {
@@ -28,8 +30,14 @@ const SignUp = () => {
     .then(result=>{
       const loggedUser=result.user;
       console.log(loggedUser)
+      updateUserProfile(data.name, data.photoUrl)
+      .then(()=>{
+        console.log("user profile updated")
+
+      })
+      navigate("/")
     })
-    // reset();
+    reset();
   };
 
  
@@ -78,6 +86,20 @@ const SignUp = () => {
                   />
                   {errors.email && (
                     <span className="text-red-500">Email is required</span>
+                  )}
+                </div>
+                <div className="form-control">
+                  <label className="label">
+                    <span className="label-text">Photo URL</span>
+                  </label>
+                  <input
+                    type="text"
+                    placeholder="Photo Url"
+                    {...register("photoUrl", { required: true })}
+                    className="input input-bordered"
+                  />
+                  {errors.photoUrl && (
+                    <span className="text-red-500">Photo Url is required</span>
                   )}
                 </div>
                 <div className="form-control">

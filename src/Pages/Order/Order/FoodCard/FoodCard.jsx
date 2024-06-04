@@ -2,19 +2,48 @@
 import "./FoodCard.css"
 import useAuth from "../../../../hooks/useAuth";
 import Swal from "sweetalert2";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
+import axios from "axios";
 
 
 const FoodCard = ({item}) => {
-    const {name, recipe,price, image}=item
+    const {name, recipe,price, image, _id}=item
     const navigate=useNavigate()
+    const location=useLocation();
 
     const {user}=useAuth()
 
     const handleAddToCart= (food)=>{
-      console.log(food , user.email)
+      console.log(food)
 
       if(user && user.email){
+        // TODO: sent item to the database
+        console.log(user.email,food)
+        const cartItem={
+          menuId:_id,
+          email:user.email,
+          name,
+          image,
+          price,
+        }
+
+        axios.post("http://localhost:5000/carts", cartItem)
+        .then(res=>{
+          console.log(res.data)
+          if(res.data.insertedId){
+            Swal.fire({
+              position: "center",
+              icon: "success",
+              title: `${name} successfully added to the cart`,
+              showConfirmButton: false,
+              timer: 1500
+            });
+          }
+        })
+
+
+        
+      }else{
         Swal.fire({
           title: "You are not login",
           text: "Please login to add to cart!",
@@ -25,12 +54,11 @@ const FoodCard = ({item}) => {
           confirmButtonText: "Yes, login!"
         }).then((result) => {
           if (result.isConfirmed) {
-            navigate("/login")
+            navigate("/login", {state:{from:location}} )
           }
         });
-      }else{
-        console.log("at first login yourself")
       }
+      
 
     }
     return (

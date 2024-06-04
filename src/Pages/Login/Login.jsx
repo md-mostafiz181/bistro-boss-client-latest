@@ -19,7 +19,8 @@ const Login = () => {
   const { signIn } = useContext(AuthContext);
   let navigate = useNavigate();
   const location=useLocation()
-  let from = location.state?.from?.pathname || "/secret";
+  let from = location.state?.from?.pathname || "/";
+  console.log("state in the login page:", location.state)
 
 
   useEffect(() => {

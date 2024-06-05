@@ -7,6 +7,12 @@ import Login from "../Pages/Login/Login";
 import SignUp from "../Pages/SignUp/SignUp";
 import PrivateRoute from "./PrivateRoute";
 import Secret from "../Pages/Home/Home/Secret/Secret";
+import DashboardLayout from "../Layout/DashboardLayout";
+import Contact from "../Pages/Contact/Contact";
+import Cart from "../Pages/Dashboard/Cart/Cart";
+import Review from "../Pages/Dashboard/Review/Review";
+import Bookings from "../Pages/Dashboard/Bookings/Bookings";
+import Reservation from "../Pages/Dashboard/Reservation/Reservation";
 
 export const router = createBrowserRouter([
   {
@@ -36,7 +42,36 @@ export const router = createBrowserRouter([
       {
         path:"secret",
         element:<PrivateRoute> <Secret></Secret> </PrivateRoute>
+      },
+      {
+        path:"contact",
+        element:<Contact></Contact>
       }
     ],
+
+ 
   },
+  {
+    path:"dashboard",
+    element:<DashboardLayout></DashboardLayout>,
+    children:[
+      {
+        path:"cart",
+        element:<Cart></Cart>
+      },
+      {
+        path:"review",
+        element:<Review></Review>
+      },
+      {
+        path:"bookings",
+        element:<Bookings></Bookings>
+      },
+      {
+        path:"reservation",
+        element: <Reservation></Reservation>
+      }
+    ]
+  }
+  
 ]);

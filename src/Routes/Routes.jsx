@@ -13,6 +13,7 @@ import Cart from "../Pages/Dashboard/Cart/Cart";
 import Review from "../Pages/Dashboard/Review/Review";
 import Bookings from "../Pages/Dashboard/Bookings/Bookings";
 import Reservation from "../Pages/Dashboard/Reservation/Reservation";
+import UserHome from "../Pages/Dashboard/UserHome/UserHome";
 
 export const router = createBrowserRouter([
   {
@@ -70,6 +71,11 @@ export const router = createBrowserRouter([
       {
         path:"reservation",
         element: <Reservation></Reservation>
+      },
+      {
+        path:"userHome",
+        element:<UserHome></UserHome>
+
       }
     ]
   }

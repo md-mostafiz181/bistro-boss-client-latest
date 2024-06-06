@@ -2,6 +2,7 @@ import { FaCalendar, FaCartArrowDown, FaMoneyBill, FaStar } from "react-icons/fa
 import useAuth from "../../../hooks/useAuth";
 import useCart from "../../../hooks/useCart";
 import useMenu from "../../../hooks/useMenu";
+import { Helmet } from "react-helmet-async";
 
 
 
@@ -17,7 +18,13 @@ const UserHome = () => {
     
     
     return (
-        <div className="pb-[200px]">
+        <section className="pb-[200px]">
+
+            <Helmet>
+                <title>Bistro || User Home</title>
+            </Helmet>
+
+
             <h1 className="text-4xl font-bold  primaryFont py-5 px-5 capitalize">Hi, Welcome Back!!!</h1>
             <div className="grid lg:grid-cols-3 sm:grid-cols-1 gap-3 px-5 h-[200px] mb-3">
                 <div className="lg:w-full flex justify-center items-center   bg-[#bb34f5b1] rounded-md">
@@ -71,7 +78,7 @@ const UserHome = () => {
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
     );
 };
 

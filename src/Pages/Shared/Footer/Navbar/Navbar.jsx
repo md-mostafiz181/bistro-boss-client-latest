@@ -8,9 +8,8 @@ import useCart from "../../../../hooks/useCart";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [cart]=useCart();
-  console.log(cart)
-
+  const [cart] = useCart();
+  console.log(cart);
 
   const handleLogOut = () => {
     logOut()
@@ -48,25 +47,31 @@ const Navbar = () => {
         </Link>
       </li>
 
-      <li>
+      <li >
         <Link to="dashboard/cart">
-        <button className="btn">
-          <FaShoppingCart></FaShoppingCart>
-          <div className="badge badge-secondary">+{cart.length}</div>
-        </button>
+          <button className="btn -mt-1">
+            <FaShoppingCart></FaShoppingCart>
+            <div className="badge badge-secondary">+{cart.length}</div>
+          </button>
         </Link>
       </li>
 
-      <div >
+
+      <div className="flex">
         {user ? (
           <>
 
-            {/* <div className="avatar">
-              <div className="w-24 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
-                <img src={photourl} />
-              </div>
-            </div> */}
-            {/* <span>{user ?. displayName}</span> */}
+              <div className="relative w-14 mr-3 mb-2 rounded-full ring ring-primary ring-offset-base-100 ring-offset-2">
+                      <img
+                        src={user?.photoURL}
+                        alt="User Photo"
+                        className="rounded-full w-full h-full"
+                      />
+                      <p className="absolute cursor-pointer inset-0 flex items-center justify-center bg-black bg-opacity-75 text-white text-center opacity-0 hover:opacity-100 rounded-full">
+                        {user?.displayName}
+                      </p>
+                    </div>
+
 
             <button onClick={handleLogOut} className="btn uppercase text-1xl">
               LogOut
@@ -75,7 +80,10 @@ const Navbar = () => {
         ) : (
           <>
             <li>
-              <Link className="btn uppercase text-1xl hover:text-white" to="login">
+              <Link
+                className="btn uppercase text-1xl hover:text-white"
+                to="login"
+              >
                 Login
               </Link>
             </li>

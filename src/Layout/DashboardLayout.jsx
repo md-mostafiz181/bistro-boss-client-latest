@@ -12,17 +12,17 @@ import { FaCartShopping } from "react-icons/fa6";
 
 const DashboardLayout = () => {
   return (
-    <div className="bg-slate-300">
+    <div className="bg-slate-300 min-h-screen flex flex-col">
     
-        <div className="drawer lg:drawer-open">
+        <div className="drawer lg:drawer-open flex-grow">
           <input id="my-drawer-2" type="checkbox" className="drawer-toggle" />
-          <div className="drawer-content ">
+          <div className="drawer-content flex flex-col px-1">
             {/* Page content here */}
 
             <Outlet></Outlet>
             <label
               htmlFor="my-drawer-2"
-              className="btn btn-primary drawer-button lg:hidden"
+              className="btn bg-orange-400 text-white  drawer-button lg:hidden "
             >
               Open drawer
             </label>
@@ -33,7 +33,7 @@ const DashboardLayout = () => {
               aria-label="close sidebar"
               className="drawer-overlay"
             ></label>
-            <ul className="menu p-4 w-60 min-h-full bg-orange-300 text-base-content">
+            <ul className="menu p-4 w-60 min-h-full bg-[#D1A054] text-base-content">
               <h1 className="text-3xl text-center primaryFont font-bold uppercase mt-4">
                 Bistro Boss
               </h1>

@@ -8,6 +8,7 @@ import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 import useAxiosPublic from "../../hooks/useAxiosPublic";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 
 
@@ -160,6 +161,9 @@ const SignUp = () => {
                     value="Sign Up"
                   />
                 </div>
+                <div className="divider">OR</div>
+
+                <SocialLogin></SocialLogin>
 
                 <p className="primaryFont text-yellow-500">Already have an account? Please <Link to="/login">Login</Link> </p>
               </form>

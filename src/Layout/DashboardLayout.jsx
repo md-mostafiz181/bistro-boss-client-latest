@@ -1,16 +1,21 @@
 import { NavLink, Outlet } from "react-router-dom";
 import {
   FaBars,
+  FaBook,
   FaCalendar,
   FaCartArrowDown,
   FaHome,
   FaSellcast,
   FaStreetView,
+  FaUser,
+  FaUtensils,
 } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
+import { Helmet } from "react-helmet-async";
 
 
 const DashboardLayout = () => {
+ const isAdmin=true;
   return (
     <div className="bg-slate-300 min-h-screen flex flex-col">
     
@@ -42,7 +47,43 @@ const DashboardLayout = () => {
               </p>
               {/* Sidebar content here */}
               <div>
+                {
+                  isAdmin ? <>
+                  <Helmet>
+                    <title>Bistro Boss || Admin </title>
+                  </Helmet>
+                  <li className="my-2 primaryFont uppercase font-bold  hover:text-white">
+                  <NavLink to="/dashboard/adminHome">
+                    <FaHome></FaHome> <a>Admin Home</a>
+                  </NavLink>
+                </li>
+                <li className="my-2 primaryFont uppercase font-bold hover:text-white">
+                  <NavLink to="/dashboard/addItems">
+                    <FaUtensils /> <a>Add Items</a>
+                  </NavLink>
+                </li>
+                <li className="my-2 primaryFont uppercase font-bold hover:text-white">
+                  <NavLink to="/dashboard/manageItems">
+                    <FaBars></FaBars> <a>Manage Items</a>
+                  </NavLink>
+                </li>
                 <li className="my-2 primaryFont uppercase font-bold  hover:text-white">
+                  <NavLink to="/dashboard/manageBookings">
+                    {" "}
+                    <FaBook/> <a>Manage Bookings</a>
+                  </NavLink>
+                </li>
+                <li className="my-2 primaryFont uppercase font-bold hover:text-white">
+                  <NavLink to="/dashboard/allUsers">
+                    <FaUser></FaUser> <a>All Users</a>
+                  </NavLink>
+                </li>
+                  </>
+                  : <>
+                  <Helmet>
+                    <title>Bistro Boss || User </title>
+                  </Helmet>
+                  <li className="my-2 primaryFont uppercase font-bold  hover:text-white">
                   <NavLink to="/dashboard/userHome">
                     <FaHome></FaHome> <a>User Home</a>
                   </NavLink>
@@ -68,6 +109,8 @@ const DashboardLayout = () => {
                     <FaCalendar></FaCalendar> <a>My Bookings</a>
                   </NavLink>
                 </li>
+                  </>
+                }
 
                 <div className="divider"></div>
 

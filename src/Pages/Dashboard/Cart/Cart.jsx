@@ -57,7 +57,7 @@ const Cart = () => {
         ></SectionTitle>
       </div>
 
-      <div className="overflow-x-auto  bg-white">
+      <div className="overflow-x-auto  bg-white ">
 
                 <div className="flex justify-between px-5 mt-5 uppercase primaryFont lg:text-2xl sm:text-xl font-bold">
                     <h1>Total Order: {cart.length}</h1>

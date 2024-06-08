@@ -12,6 +12,7 @@ import { useContext, useEffect, useState } from "react";
 import Swal from "sweetalert2";
 import { AuthContext } from "../../providers/AuthProvider";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import SocialLogin from "../../components/SocialLogin/SocialLogin";
 
 const Login = () => {
   const [disabled, setDisabled] = useState(true);
@@ -20,7 +21,7 @@ const Login = () => {
   let navigate = useNavigate();
   const location=useLocation()
   let from = location.state?.from?.pathname || "/";
-  console.log("state in the login page:", location.state)
+  // console.log("state in the login page:", location.state)
 
 
   useEffect(() => {
@@ -139,9 +140,15 @@ const Login = () => {
                   type="submit"
                   value="Login"
                 />
+
+                  <div className="divider">OR</div>
+
+                  <SocialLogin ></SocialLogin>
+               
               </form>
 
-              
+                
+
                 <h1 className="primaryFont text-[#D1A054] text-center">
                   New here? Please <Link to="/signup">Sign Up</Link>
                 </h1>

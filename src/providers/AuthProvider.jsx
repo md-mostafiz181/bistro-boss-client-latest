@@ -45,6 +45,12 @@ const AuthProvider = ({ children }) => {
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
             setUser(currentUser);
+            if(currentUser){
+                        // get token to store client
+            }
+            else{
+                    // remove token from client local storage
+            }
             console.log('current user', currentUser);
             setLoading(false);
         });

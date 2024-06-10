@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 import Container from "../../../../components/Container/Container";
 import "./Navbar.css";
 import { useContext } from "react";
@@ -21,30 +21,30 @@ const Navbar = () => {
   const navOptions = (
     <>
       <li className="uppercase text-1xl">
-        <Link to="/">Home</Link>
+        <NavLink to="/">Home</NavLink>
       </li>
       <li className="uppercase text-1xl">
-        <Link to="/menu">Menu</Link>
+        <NavLink to="/menu">Menu</NavLink>
       </li>
       <li>
-        <Link className="uppercase text-1xl" to="order/salad">
+        <NavLink className="uppercase text-1xl" to="order/salad">
           Order Shop
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="uppercase text-1xl" to="secret">
+        <NavLink className="uppercase text-1xl" to="secret">
           Secret
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="uppercase text-1xl" to="contact">
+        <NavLink className="uppercase text-1xl" to="contact">
           Contact
-        </Link>
+        </NavLink>
       </li>
       <li>
-        <Link className="uppercase text-1xl" to="dashboard/userHome">
+        <NavLink className="uppercase text-1xl" to="dashboard/userHome">
           Dashboard
-        </Link>
+        </NavLink>
       </li>
 
       <li >

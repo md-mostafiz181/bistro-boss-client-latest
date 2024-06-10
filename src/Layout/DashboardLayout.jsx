@@ -12,10 +12,13 @@ import {
 } from "react-icons/fa";
 import { FaCartShopping } from "react-icons/fa6";
 import { Helmet } from "react-helmet-async";
+import useAdmin from "../hooks/useAdmin";
 
 
 const DashboardLayout = () => {
- const isAdmin=true;
+ const [isAdmin]= useAdmin();
+
+ 
   return (
     <div className="bg-slate-300 min-h-screen flex flex-col">
     

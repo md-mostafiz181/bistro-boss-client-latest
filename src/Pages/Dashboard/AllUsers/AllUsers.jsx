@@ -83,7 +83,9 @@ const AllUsers = () => {
       <div className="bg-white p-10">
         <h1 className="mt-4 uppercase primaryFont font-bold lg:text-4xl sm:text-xl mb-4">
           total users: {users.length}
+          
         </h1>
+        
         <div className="overflow-x-auto">
           <table className="table">
             {/* head */}
